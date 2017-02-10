@@ -1,0 +1,83 @@
+body{
+  font-family: Arial;
+  color:#212121;
+}
+form{
+  font-size: 1em;
+  padding: 20px;
+  width: 700px;
+  background-color: #C5CAE9;
+  margin: 0 auto;
+  border-radius: 30px;
+}
+form input{
+  font-size:1em;
+  padding: 5px;
+  width: 100px;
+  margin: 10px;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+}
+#start-btn{
+  margin: 0 auto;
+  width: 100px;
+  height: 30px;
+  background-color: #F44336;
+  color: #fff;
+  font-size: 1em;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+}
+h1,h2{
+  text-align: center;
+}
+.game-board{
+  position: relative;
+  width: 700px;
+  height: 600px;
+  padding: 20px;
+  margin: 0 auto;
+  background-color: #eee;
+  border-radius: 50px;
+  background-color: #C5CAE9;
+}
+.cell{
+  float:left;
+  border-radius: 50px;
+  margin: 10px;
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  transition: 1s;
+}
+.col{
+  border:10px solid #C5CAE9;;
+  position: absolute;
+  box-sizing: border-box;
+  width: 110px;
+  top:15px;
+  height: 610px;
+  border-radius: 50px;
+  opacity: 0;
+  transition: 0.5s;
+}
+.col:hover{
+  opacity: 1;
+  border-color: #b1b6d5;;
+}
+.black{
+  background-color: #212121;
+}
+.red{
+  background-color: #F44336;
+}
+
+.col0{left: 15px;}
+.col1{left: 115px;}
+.col2{left: 215px;}
+.col3{left: 315px;}
+.col4{left: 415px;}
+.col5{left: 515px;}
+.col6{left: 615px;}
