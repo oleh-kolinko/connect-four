@@ -7,20 +7,21 @@
   </head>
   <body>
     <h1>Connect 4</h1>
-    <form>
-      <label>Enter 1st player name:</label><input type ="text"></input>
-      <label>Enter 2nd player name:</label><input type ="text"></input>
+    <form id="player-form">
+      <label>Enter 1st player name:</label><input type ="text" id="input-pl-1" value="Oleh"></input>
+      <label>Enter 2nd player name:</label><input type ="text" id="input-pl-2" value="Nizar"></input>
       <button id="start-btn">START</button>
     </form>
-    <h2>It's <span id="player">Oleh</span>'s turn</h2>
+
+    <h2 id="player-turn">It's <span id="player">Oleh</span>'s turn</h2>
     <div class="game-board">
-      <div class="col col0"></div>
-      <div class="col col1"></div>
-      <div class="col col2"></div>
-      <div class="col col3"></div>
-      <div class="col col4"></div>
-      <div class="col col5"></div>
-      <div class="col col6"></div>
+      <div class="col col0" id="drop0"></div>
+      <div class="col col1" id="drop1"></div>
+      <div class="col col2" id="drop2"></div>
+      <div class="col col3" id="drop3"></div>
+      <div class="col col4" id="drop4"></div>
+      <div class="col col5" id="drop5"></div>
+      <div class="col col6" id="drop6"></div>
 
       <div class="cell pos00"></div>
       <div class="cell pos01"></div>
