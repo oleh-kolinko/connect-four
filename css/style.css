@@ -52,6 +52,11 @@ h1,#player-turn{
 }
 #player-turn{
   display: none;
+  transition: 1s transform;
+}
+.player-turn-win{
+  transform: scale(3.5);
+
 }
 
 .game-board{
@@ -68,6 +73,7 @@ h1,#player-turn{
 .cell{
   float:left;
   border-radius: 50px;
+  box-sizing: border-box;
   margin: 8px;
   width: 84px;
   height: 84px;
@@ -90,11 +96,17 @@ h1,#player-turn{
   opacity: 1;
   border-color: #b1b6d5;;
 }
+
 .black{
   background-color: #212121;
 }
 .red{
   background-color: #F44336;
+}
+
+.winner-cell{
+  transform: scale(1.5);
+  border: 5px solid green;
 }
 
 .col0{left: 15px;}

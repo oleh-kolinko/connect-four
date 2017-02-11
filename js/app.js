@@ -17,11 +17,14 @@ $(document).ready(function(){
 
   //play
   $('.col').click(function(){
-    var colN = $(this).attr('id');
-    colN = parseInt(colN[colN.length-1]);//get columnNumber
-    game.playChecker(colN);
-    renderBoard();
-    updateCurrentPlayer();
+    if(!game.gameOver){
+      var columnIndex = $(this).attr('id');
+      columnIndex = parseInt(columnIndex[columnIndex.length-1]);//get columnIndex
+      game.playChecker(columnIndex);
+      renderBoard();
+      isGameOver();
+      updateCurrentPlayer();
+    }
   });
 });
 
@@ -42,6 +45,11 @@ function renderBoard(){ //Show all checkers on DOM
 }
 
 function updateCurrentPlayer(){ //Update player turn on DOM
+
+  if(game.isGameOver){
+    return;
+  }
+
   $('#player').html(game.currentPlayer);
   if(game.currentPlayer === game.player1){
     $('#player').parent().removeClass('player-2');
@@ -49,5 +57,27 @@ function updateCurrentPlayer(){ //Update player turn on DOM
   }else{
     $('#player').parent().removeClass('player-1');
     $('#player').parent().addClass('player-2');
+  }
+}
+
+function isGameOver(){
+  if (game.gameOver){
+    $('#player-turn').addClass('player-turn-win');
+    if(game.winner === 1 ){
+      $('#player-turn').html(game.player1 + ' WINNER!');
+    }else{
+      $('#player-turn').html(game.player2 + ' WINNER!');
+
+    }
+
+    console.log(game.winner);
+    for(var i = 0 ; i < 4; i++){
+      var posRow = game.winningCombination[i].i;
+      var posCol = game.winningCombination[i].j;
+      $('.pos' + posRow + posCol).addClass('winner-cell');
+      setTimeout(function(){
+        $('.pos' + posRow + posCol).addClass('winner-cell');
+      },200*i);
+    }
   }
 }
